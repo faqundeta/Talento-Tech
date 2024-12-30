@@ -161,7 +161,7 @@ main {
 .info-container-img {
     width: 100%; /* Ocupa todo el ancho del contenedor */
     height: 100%; /* Ajusta la altura para que no ocupe todo el espacio */
-    background-image: url('assets/img/piano-sección-info.webp');
+    background-image: url('/assets/img/piano-sección-info.webp');
     background-size: cover; /* Cubre el área sin distorsionar la imagen */
     background-position: center center;
     background-repeat: no-repeat;
