@@ -25,7 +25,11 @@
                 <li><a href="#data">Clases</a></li>
                 <li><a href="#pricing">Contacto</a></li>
             </ul>
-            <img src="assets/img/buscador1.png" alt="lupa" class="icono-buscador">
+            
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
         </nav>
     </header>
     <main>
@@ -93,7 +97,7 @@
                         <li>Material enviado por mail</li>
                         <li>Acceso básico</li>
                     </ul>
-                    <button class="card-button">Suscríbete</button>
+                    <button class="card-button" onclick="addToCart('Básico', 9.99)">Agregar al Carrito</button>
                 </div>
 
                 <div class="card featured">
@@ -110,7 +114,7 @@
                         <li>Material enviado por mail</li>
                         <li>Acceso premium</li>
                     </ul>
-                    <button class="card-button">Suscríbete</button>
+                    <button class="card-button" onclick="addToCart('Profesional', 19.99)">Agregar al Carrito</button>
                 </div>
 
                 <div class="card">
@@ -126,7 +130,7 @@
                         <li>Material más videos de referencia.</li>
                         <li>Acceso total</li>
                     </ul>
-                    <button class="card-button">Suscríbete</button>
+                    <button class="card-button" onclick="addToCart('Premium', 49.99)">Agregar al Carrito</button>
                 </div>
     
             </div>
@@ -210,6 +214,25 @@
       </div>
     </footer>
 
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Tu Carrito</h3>
+                <button class="close-cart">&times;</button>
+            </div>
+            <div class="cart-items">
+                <!-- Los items se agregarán dinámicamente -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="total-amount">$0</span>
+                </div>
+                <button class="checkout-btn">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
@@ -232,6 +255,8 @@
             });
         });
     </script>
+
+    <script src="/assets/js/cart.js"></script>
 
 </body>
 </html>
