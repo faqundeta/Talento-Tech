@@ -353,7 +353,7 @@ main {
 }
 
 
-/* footer */
+
 
 .footer {
   background-color: #1a1a1a;
@@ -530,12 +530,6 @@ main {
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  .footer-col:last-child {
-    grid-column: span 2;
-    max-width: 500px;
-    margin: 0 auto;
-  }
 }
 
 @media (max-width: 576px) {
@@ -543,12 +537,212 @@ main {
     grid-template-columns: 1fr;
   }
   
-  .footer-col:last-child {
-    grid-column: span 1;
+  .footer-col {
+    padding: 0;
+    text-align: center;
   }
   
-  .form-group input,
-  .form-group textarea {
-    font-size: 16px; /* Mejor para móviles */
+  .footer-col h4::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Media Queries Generales */
+@media (max-width: 1024px) {
+  /* Header */
+  header {
+    padding: 0px 20px;
+  }
+
+  /* Hero Section */
+  #hero {
+    flex-direction: column;
+    padding: 80px 20px;
+    height: auto;
+    text-align: center;
+  }
+
+  .hero-info {
+    width: 70%;
+    align-items: center;
+    margin-top: 30px;
+    gap: 15px;
+  }
+
+  .hero-info h1 {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .hero-card {
+    width: 80%;
+  }
+
+  /* Info Section */
+  .info-container-text {
+    width: 50%;
+    max-width: none;
+    position: relative;
+    top: -150px;
+    left: -20%;
+    margin: 0 auto;
+  }
+
+  /* Data Section */
+  #data {
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .data-img, 
+  .data-text {
+    width: 100%;
+  }
+
+
+  .data-text h2 {
+    min-width: unset;
+    width: 100%;
+    font-size: 32px;
+    text-align: center;
+  }
+
+  /* Cards Section */
+
+  .pricing-text{
+    text-align: center;
+  }
+  .cards {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .card {
+    width: 80%;
+    max-width: 400px;
+  }
+
+  .card.featured {
+    transform: none;
+  }
+
+#img-arriba-footer {
+    display: none !important;
+}
+
+
+}
+
+@media (max-width: 768px) {
+  /* Header */
+  .navbar-list {
+    display: none; /* Aquí deberías implementar un menú hamburguesa */
+  }
+
+  /* Hero Section */
+  .hero-info h1 {
+    font-size: 32px;
+  }
+
+  .hero-card {
+    width: 100%;
+  }
+
+  /* Info Section */
+  .info-container {
+    padding: 20px 0;
+  }
+
+  .info-container-text {
+    width: 50%;
+    padding: 20px;
+  }
+
+  /* Data Section */
+  .data-text h2 {
+    font-size: 28px;
+  }
+
+  /* Cards Section */
+  .card {
+    width: 100%;
+  }
+
+  .pricing-text h3 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 570px) {
+.quick-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+}
+
+@media (max-width: 480px) {
+  /* Header */
+  .logo {
+    height: 50%;
+  }
+
+  /* Hero Section */
+  .hero-info h1 {
+    font-size: 28px;
+  }
+
+  /* Info Section */
+  .info-container-text {
+    width: 60%;
+    padding: 10px;
+    top: -200px;
+  }
+
+  /* Cards Section */
+  #pricing {
+    margin: 2rem 1rem;
+  }
+
+  .pricing-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+/* Menú Hamburguesa */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-list {
+    position: fixed;
+    top: 65px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 65px);
+    background: white;
+    flex-direction: column;
+    transition: 0.3s;
+    padding: 20px 0;
+  }
+
+  .navbar-list.active {
+    left: 0;
   }
 }
