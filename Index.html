@@ -11,11 +11,10 @@
         <img src="/assets/img/pianoacademylogo-dark.png" alt="logo de la academia" class="logo">
         <nav class="navbar">
             <ul class="navbar-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Clases</a></li>
-                <li><a href="#">Analisis</a></li>
-                <li><a href="#">Recursos</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#info">Nosotros</a></li>
+                <li><a href="#data">Clases</a></li>
+                <li><a href="#pricing">Contacto</a></li>
             </ul>
             <img src="/assets/img/buscador1.png" alt="lupa" class="icono-buscador">
         </nav>
@@ -63,10 +62,143 @@
             </div>
         </section>
 
+        <section id="pricing"> 
+            <div class="pricing-text">
+                <h3>
+                    ¿Quieres aprender a tocar piano de una forma de fácil y divertida?
+                </h3>
+                    <p>Apuntate ya a las clases que brindamos en nuestra Academia. </p>
+            </div>
 
-        <footer>
-            <p>Copyright © 2024 Todos los derechos reservados - Piano Academy</p>
-        </footer>
+            <div class="cards">
+                <div class="card">
+                    <h3>Básico</h3>
+                    <div class="card-price">
+                        <span class="currency">$</span>  
+                        <span class="price">9.99</span>
+                        <span class="month">/mes</span>
+                    </div>
+                    <ul class="card-list">
+                        <li>1 Usuario</li>
+                        <li>1 lección individual semanal</li>
+                        <li>Material enviado por mail</li>
+                        <li>Acceso básico</li>
+                    </ul>
+                    <button class="card-button">Suscríbete</button>
+                </div>
+
+                <div class="card featured">
+                    <div class="popular">Más Popular</div>
+                    <h3>Profesional</h3>
+                    <div class="card-price">
+                        <span class="currency">$</span>  
+                        <span class="price">19.99</span>
+                        <span class="month">/mes</span>
+                    </div>
+                    <ul class="card-list">
+                        <li>1 Usuario</li>
+                        <li>2 lección individuales semanal</li>
+                        <li>Material enviado por mail</li>
+                        <li>Acceso premium</li>
+                    </ul>
+                    <button class="card-button">Suscríbete</button>
+                </div>
+
+                <div class="card">
+                    <h3>Premium</h3>
+                    <div class="card-price">
+                        <span class="currency">$</span>  
+                        <span class="price">49.99</span>
+                        <span class="month">/mes</span>
+                    </div>
+                    <ul class="card-list">
+                        <li>1 Usuario</li>
+                        <li>3 lección individuales semanal</li>
+                        <li>Material más videos de referencia.</li>
+                        <li>Acceso total</li>
+                    </ul>
+                    <button class="card-button">Suscríbete</button>
+                </div>
+    
+            </div>
+        </section>
+
+        <section id="img-arriba-footer">
+            <img src="/assets/img/otra imagen arriba de footer.PNG" alt="mujer tocando el piano" style="width: 100vw; height: 100vh;">
+        </section>
+
+    
     </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Columna 1: Logo y descripción -->
+        <div class="footer-col">
+          <img src="/assets/img/pianoacademylogo-dark.png" alt="Logo" class="footer-logo">
+          <p class="footer-description">
+            Empresa dedicada a la enseñanza del piano.
+          </p>
+          <div class="quick-contact">
+            <p><i class="fas fa-map-marker-alt"></i> Av. Ejemplo 123, CABA</p>
+            <p><i class="fas fa-phone"></i> +54 11 1234-5678</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna 2: Enlaces rápidos -->
+        <div class="footer-col">
+          <h4>Enlaces Rápidos</h4>
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="">Nosotros</a></li>
+            <li><a href="">Clases</a></li>
+            <li><a href="">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Horarios -->
+        <div class="footer-col">
+          <h4>Horarios</h4>
+          <ul class="footer-hours">
+            <li>Lunes: 9:00 - 18:00</li>
+            <li>Martes: 9:00 - 18:00</li>
+            <li>Miércoles: 9:00 - 18:00</li>
+            <li>Jueves: 9:00 - 18:00</li>
+            <li>Viernes: 9:00 - 18:00</li>
+            <li>Sábado: 9:00 - 13:00</li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Contacto -->
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <form class="footer-form">
+            <div class="form-group">
+              <input type="text" placeholder="Nombre" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="Teléfono" required>
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Mensaje" required></textarea>
+            </div>
+            <button type="submit" class="footer-submit-btn">Enviar</button>
+          </form>
+          
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
 </body>
 </html>
