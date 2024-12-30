@@ -11,6 +11,14 @@
     <header>
         <img src="/assets/img/pianoacademylogo-dark.png" alt="logo de la academia" class="logo">
         <nav class="navbar">
+            <div class="menu-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
             <ul class="navbar-list">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#info">Nosotros</a></li>
@@ -201,6 +209,29 @@
         <p>&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
       </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navbarList = document.querySelector('.navbar-list');
+            const body = document.body;
+
+            menuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navbarList.classList.toggle('active');
+                body.classList.toggle('no-scroll');
+            });
+
+            // Cerrar menú al hacer click en los enlaces
+            document.querySelectorAll('.navbar-list a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    navbarList.classList.remove('active');
+                    body.classList.remove('no-scroll');
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

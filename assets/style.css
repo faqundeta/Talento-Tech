@@ -638,7 +638,28 @@ main {
 @media (max-width: 768px) {
   /* Header */
   .navbar-list {
-    display: none; /* Aquí deberías implementar un menú hamburguesa */
+    position: fixed;
+    top: 65px;
+    left: 100%;
+    width: 100%;
+    height: calc(100vh - 65px);
+    background: var(--primary);
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  .navbar-list.active {
+    left: 0;
+  }
+
+  /* Asegurarnos que el menú toggle sea visible */
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Hero Section */
@@ -718,31 +739,121 @@ main {
   }
 }
 
-/* Menú Hamburguesa */
+/* Estilos para el menú hamburguesa */
 .menu-toggle {
-  display: none;
-  cursor: pointer;
-  font-size: 24px;
+    display: none;
 }
 
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+        z-index: 1000;
+    }
 
-  .navbar-list {
-    position: fixed;
-    top: 65px;
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - 65px);
-    background: white;
-    flex-direction: column;
-    transition: 0.3s;
-    padding: 20px 0;
-  }
+    .hamburger {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
 
-  .navbar-list.active {
-    left: 0;
-  }
+    .hamburger span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--last);
+        position: absolute;
+        border-radius: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger span:first-child {
+        top: 0;
+    }
+
+    .hamburger span:nth-child(2) {
+        top: 9px;
+    }
+
+    .hamburger span:last-child {
+        top: 18px;
+    }
+
+    /* Animación del menú hamburguesa */
+    .menu-toggle.active .hamburger span:first-child {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .menu-toggle.active .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .hamburger span:last-child {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* Estilos del menú desplegable */
+    .navbar-list {
+        position: fixed;
+        top: 65px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 65px);
+        background: linear-gradient(to bottom, var(--fifth), white);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 40px;
+        transition: all 0.3s ease-in-out;
+        gap: 30px;
+    }
+
+    .navbar-list.active {
+        left: 0;
+    }
+
+    .navbar-list li {
+        width: 80%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-list li:last-child {
+        border-bottom: none;
+    }
+
+    .navbar-list a {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    body.no-scroll {
+        overflow: hidden;
+    }
+
+    
+    .icono-buscador {
+        margin-left: auto;
+    }
 }
+
+
+@media (max-width: 480px) {
+    .navbar-list {
+        padding-top: 30px;
+    }
+
+    .navbar-list li {
+        width: 90%;
+    }
+
+    .navbar-list a {
+        font-size: 16px;
+    }
+}
+
